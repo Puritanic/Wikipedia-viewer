@@ -8,21 +8,36 @@
     text-align: justify;
     background: color(var(--eggshell) alpha(25%));
 
+    .input {
+        width: 80%;
+        height: 40px;
+        display: block;
+        margin: 0 auto;
+    }
+
     & #wikiSearch {
         height: 35px;
         width: 80%;
-        margin: 0 auto;
         border: none;
         outline: none;
         text-indent: 5px;
         background: var(--eggshell);
     }
 
+    & #wikiSearch:focus {
+        background: color(var(--eggshell) shade(15%));
+    }
+
     & #searchBtn {
         height: 35px;
+        width: 20%;
         margin-left: -4px;
         border: none;
         outline: none;
+    }
+
+    & #searchBtn:hover {
+        background: color(var(--eggshell) shade(15%));        
     }
 
     & a {
@@ -33,5 +48,12 @@
     & .title {
         font-size: 24px;
         word-spacing: 0.1em;
+        text-align: center;
     }
+
+    & hr{
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
 }

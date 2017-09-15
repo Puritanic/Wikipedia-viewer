@@ -4,17 +4,21 @@ import $ from '../vendor/jquery-3.2.1.min';
 
 $(document).ready(function () {
     $('#searchBtn').on('click', function () {
-        $.ajax({
-            url: '//en.wikipedia.org/w/api.php', // Wiki API endpoint
-            data: {
-                action: 'opensearch', // https://www.mediawiki.org/wiki/API:Opensearch
-                format: 'json', // return the data in the JSON format
-                limit: 20, // limit the results
-                search: $("input[name=wikipedia]").val()
-            },
-            dataType: 'jsonp', // JSONp return to "relax the same-origin-policy"
-            success: processResult // callback function to proceed on a success
-        });
+        if ($("input[name=wikipedia]").val() < 1) {
+            console.log('nope');
+        } else {
+            $.ajax({
+                url: '//en.wikipedia.org/w/api.php', // Wiki API endpoint
+                data: {
+                    action: 'opensearch', // https://www.mediawiki.org/wiki/API:Opensearch
+                    format: 'json', // return the data in the JSON format
+                    limit: 20, // limit the results
+                    search: $("input[name=wikipedia]").val()
+                },
+                dataType: 'jsonp', // JSONp return to "relax the same-origin-policy"
+                success: processResult // callback function to proceed on a success
+            });
+        }
     });
 });
 
@@ -30,8 +34,12 @@ function processResult(apiResult) {
     $("input[name=wikipedia]").val("")
     // loop through results and append them to results div
     for (var i = 0; i < apiResult[1].length; i++) {
-        $('#displayResults').append('<p class="title"><a target="_blank" href="'+ link[i] + '">' + title[i] + '</a></p>');
+        $('#displayResults').append('<p class="title"><a target="_blank" href="' + link[i] + '">' + title[i] + '</a></p>');
+        if (description[i].length < 3) {
+            $('#displayResults').append('<p> There is no description for this result :( </p>');
+        }
         $('#displayResults').append('<p>' + description[i] + '</p>');
+        $('#displayResults').append('<hr/>');
     }
 }
 // run search with Enter key while focused on input field
@@ -40,4 +48,3 @@ $("#wikiSearch").keydown(function (e) {
         $("#searchBtn").click();
     }
 });
-

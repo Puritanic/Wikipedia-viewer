@@ -89,17 +89,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _jquery2.default)(document).ready(function () {
     (0, _jquery2.default)('#searchBtn').on('click', function () {
-        _jquery2.default.ajax({
-            url: '//en.wikipedia.org/w/api.php', // Wiki API endpoint
-            data: {
-                action: 'opensearch', // https://www.mediawiki.org/wiki/API:Opensearch
-                format: 'json', // return the data in the JSON format
-                limit: 20, // limit the results
-                search: (0, _jquery2.default)("input[name=wikipedia]").val()
-            },
-            dataType: 'jsonp', // JSONp return to "relax the same-origin-policy"
-            success: processResult // callback function to proceed on a success
-        });
+        if ((0, _jquery2.default)("input[name=wikipedia]").val() < 1) {
+            console.log('nope');
+        } else {
+            _jquery2.default.ajax({
+                url: '//en.wikipedia.org/w/api.php', // Wiki API endpoint
+                data: {
+                    action: 'opensearch', // https://www.mediawiki.org/wiki/API:Opensearch
+                    format: 'json', // return the data in the JSON format
+                    limit: 20, // limit the results
+                    search: (0, _jquery2.default)("input[name=wikipedia]").val()
+                },
+                dataType: 'jsonp', // JSONp return to "relax the same-origin-policy"
+                success: processResult // callback function to proceed on a success
+            });
+        }
     });
 });
 
@@ -116,7 +120,11 @@ function processResult(apiResult) {
     // loop through results and append them to results div
     for (var i = 0; i < apiResult[1].length; i++) {
         (0, _jquery2.default)('#displayResults').append('<p class="title"><a target="_blank" href="' + link[i] + '">' + title[i] + '</a></p>');
+        if (description[i].length < 3) {
+            (0, _jquery2.default)('#displayResults').append('<p> There is no description for this result :( </p>');
+        }
         (0, _jquery2.default)('#displayResults').append('<p>' + description[i] + '</p>');
+        (0, _jquery2.default)('#displayResults').append('<hr/>');
     }
 }
 // run search with Enter key while focused on input field
