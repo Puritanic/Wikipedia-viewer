@@ -30,7 +30,8 @@ function processResult(apiResult) {
     $("input[name=wikipedia]").val("")
     // loop through results and append them to results div
     for (var i = 0; i < apiResult[1].length; i++) {
-        $('#displayResults').append('<p>' + title[i] + '</p>');
+        $('#displayResults').append('<p class="title"><a target="_blank" href="'+ link[i] + '">' + title[i] + '</a></p>');
+        $('#displayResults').append('<p>' + description[i] + '</p>');
     }
 }
 // run search with Enter key while focused on input field
@@ -40,6 +41,3 @@ $("#wikiSearch").keydown(function (e) {
     }
 });
 
-// array[1] holds the match strings for results
-// array[2] returns short descriptions
-// array[3] returns the direct links to each result

@@ -1,8 +1,71 @@
 @font-face {
- font-family: Alice;
+ font-family: Lato;
+ font-style: italic;
+ font-weight: 100;
+ src: local("Lato Hairline Italic"),local(Lato-HairlineItalic),url(//fonts.gstatic.com/s/lato/v13/81DMwqUqq96weubmVpbDyvesZW2xOQ-xsNqO47m55DA.eot?#) format("eot"),url(//fonts.gstatic.com/s/lato/v13/9TBVFLzQ3GUZLG8FZ4yrEfesZW2xOQ-xsNqO47m55DA.woff2) format("woff2"),url(//fonts.gstatic.com/s/lato/v13/CggrdU0t5c42NcNxN-VM3_esZW2xOQ-xsNqO47m55DA.woff) format("woff");
+}
+
+@font-face {
+ font-family: Lato;
+ font-style: italic;
+ font-weight: 300;
+ src: local("Lato Light Italic"),local(Lato-LightItalic),url(//fonts.gstatic.com/s/lato/v13/2HG_tEPiQ4Z6795cGfdivPY6323mHUZFJMgTvxaG2iE.eot?#) format("eot"),url(//fonts.gstatic.com/s/lato/v13/2HG_tEPiQ4Z6795cGfdivFtXRa8TVwTICgirnJhmVJw.woff2) format("woff2"),url(//fonts.gstatic.com/s/lato/v13/2HG_tEPiQ4Z6795cGfdivD8E0i7KZn-EPnyo3HZu7kw.woff) format("woff");
+}
+
+@font-face {
+ font-family: Lato;
+ font-style: italic;
+ font-weight: 400;
+ src: local("Lato Italic"),local(Lato-Italic),url(//fonts.gstatic.com/s/lato/v13/bjaQ6jyWa8A2XFrSKceJyA.eot?#) format("eot"),url(//fonts.gstatic.com/s/lato/v13/PLygLKRVCQnA5fhu3qk5fQ.woff2) format("woff2"),url(//fonts.gstatic.com/s/lato/v13/oUan5VrEkpzIazlUe5ieaA.woff) format("woff");
+}
+
+@font-face {
+ font-family: Lato;
+ font-style: italic;
+ font-weight: 700;
+ src: local("Lato Bold Italic"),local(Lato-BoldItalic),url(//fonts.gstatic.com/s/lato/v13/HkF_qI1x_noxlxhrhMQYEPY6323mHUZFJMgTvxaG2iE.eot?#) format("eot"),url(//fonts.gstatic.com/s/lato/v13/HkF_qI1x_noxlxhrhMQYEFtXRa8TVwTICgirnJhmVJw.woff2) format("woff2"),url(//fonts.gstatic.com/s/lato/v13/HkF_qI1x_noxlxhrhMQYED8E0i7KZn-EPnyo3HZu7kw.woff) format("woff");
+}
+
+@font-face {
+ font-family: Lato;
+ font-style: italic;
+ font-weight: 900;
+ src: local("Lato Black Italic"),local(Lato-BlackItalic),url(//fonts.gstatic.com/s/lato/v13/VNUH7ZAcagYBWsAiBBCEY_Y6323mHUZFJMgTvxaG2iE.eot?#) format("eot"),url(//fonts.gstatic.com/s/lato/v13/VNUH7ZAcagYBWsAiBBCEY1tXRa8TVwTICgirnJhmVJw.woff2) format("woff2"),url(//fonts.gstatic.com/s/lato/v13/VNUH7ZAcagYBWsAiBBCEYz8E0i7KZn-EPnyo3HZu7kw.woff) format("woff");
+}
+
+@font-face {
+ font-family: Lato;
+ font-style: normal;
+ font-weight: 100;
+ src: local("Lato Hairline"),local(Lato-Hairline),url(//fonts.gstatic.com/s/lato/v13/KlmP_Vc2zOZBldw8AfXD5g.eot?#) format("eot"),url(//fonts.gstatic.com/s/lato/v13/GtRkRNTnri0g82CjKnEB0Q.woff2) format("woff2"),url(//fonts.gstatic.com/s/lato/v13/boeCNmOCCh-EWFLSfVffDg.woff) format("woff");
+}
+
+@font-face {
+ font-family: Lato;
+ font-style: normal;
+ font-weight: 300;
+ src: local("Lato Light"),local(Lato-Light),url(//fonts.gstatic.com/s/lato/v13/zLhfkPOm_5ykmdm-wXaiuw.eot?#) format("eot"),url(//fonts.gstatic.com/s/lato/v13/EsvMC5un3kjyUhB9ZEPPwg.woff2) format("woff2"),url(//fonts.gstatic.com/s/lato/v13/KT3KS9Aol4WfR6Vas8kNcg.woff) format("woff");
+}
+
+@font-face {
+ font-family: Lato;
  font-style: normal;
  font-weight: 400;
- src: local("Alice Regular"),local(Alice-Regular),url(//fonts.gstatic.com/s/alice/v8/sZyKh5NKrCk1xkCk_F1S8A.eot?#) format("eot"),url(//fonts.gstatic.com/s/alice/v8/l5RFQT5MQiajQkFxjDLySg.woff2) format("woff2"),url(//fonts.gstatic.com/s/alice/v8/_H4kMcdhHr0B8RDaQcqpTA.woff) format("woff");
+ src: local("Lato Regular"),local(Lato-Regular),url(//fonts.gstatic.com/s/lato/v13/nQhiC-wSiJx0pvEuJl8d8A.eot?#) format("eot"),url(//fonts.gstatic.com/s/lato/v13/1YwB1sO8YE1Lyjf12WNiUA.woff2) format("woff2"),url(//fonts.gstatic.com/s/lato/v13/9k-RPmcnxYEPm8CNFsH2gg.woff) format("woff");
+}
+
+@font-face {
+ font-family: Lato;
+ font-style: normal;
+ font-weight: 700;
+ src: local("Lato Bold"),local(Lato-Bold),url(//fonts.gstatic.com/s/lato/v13/sBtfDPlEIwvKKU53nAG7AQ.eot?#) format("eot"),url(//fonts.gstatic.com/s/lato/v13/H2DMvhDLycM56KNuAtbJYA.woff2) format("woff2"),url(//fonts.gstatic.com/s/lato/v13/wkfQbvfT_02e2IWO3yYueQ.woff) format("woff");
+}
+
+@font-face {
+ font-family: Lato;
+ font-style: normal;
+ font-weight: 900;
+ src: local("Lato Black"),local(Lato-Black),url(//fonts.gstatic.com/s/lato/v13/BjDVcwQGWPX2RAidnkd0Bw.eot?#) format("eot"),url(//fonts.gstatic.com/s/lato/v13/tI4j516nok_GrVf4dhunkg.woff2) format("woff2"),url(//fonts.gstatic.com/s/lato/v13/BVtM30trf7q_jfqYeHfjtA.woff) format("woff");
 }
 
 /*Variables*/
@@ -18,7 +81,7 @@
 /* Fonts */
 
 body {
-   font-family: "Alice";
+   font-family: "Lato";
 }
 
 /*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
@@ -37,6 +100,9 @@ html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
+    width: 100%;
+    height: 100%;
+    background: url('/assets/images/stardust.png');
 }
 
 *,
@@ -696,6 +762,44 @@ we can specify global variable to use flexbox as default instead of floats
         <div class="grid-item">12</div>
     </section>
     </div>*/
+
+.container {
+    width: 95%;
+    height: 100%;
+    min-height: 300px;
+    margin: 25% auto;
+    border: 5px solid #47230b;
+    padding: 10px;
+    text-align: justify;
+    background: rgba(238, 232, 214, 0.25)
+}
+
+.container #wikiSearch {
+ height: 35px;
+ width: 80%;
+ margin: 0 auto;
+ border: none;
+ outline: none;
+ text-indent: 5px;
+ background: #EEE8D6;
+}
+
+.container #searchBtn {
+ height: 35px;
+ margin-left: -4px;
+ border: none;
+ outline: none;
+}
+
+.container a {
+ text-decoration: none;
+ color: #022933;
+}
+
+.container .title {
+ font-size: 24px;
+ word-spacing: 0.1em;
+}
 
 /* ==========================================================================
    Helper classes

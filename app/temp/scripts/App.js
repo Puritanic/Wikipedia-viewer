@@ -115,7 +115,8 @@ function processResult(apiResult) {
     (0, _jquery2.default)("input[name=wikipedia]").val("");
     // loop through results and append them to results div
     for (var i = 0; i < apiResult[1].length; i++) {
-        (0, _jquery2.default)('#displayResults').append('<p>' + title[i] + '</p>');
+        (0, _jquery2.default)('#displayResults').append('<p class="title"><a target="_blank" href="' + link[i] + '">' + title[i] + '</a></p>');
+        (0, _jquery2.default)('#displayResults').append('<p>' + description[i] + '</p>');
     }
 }
 // run search with Enter key while focused on input field
@@ -124,10 +125,6 @@ function processResult(apiResult) {
         (0, _jquery2.default)("#searchBtn").click();
     }
 });
-
-// array[1] holds the match strings for results
-// array[2] returns short descriptions
-// array[3] returns the direct links to each result
 
 /***/ }),
 /* 2 */
