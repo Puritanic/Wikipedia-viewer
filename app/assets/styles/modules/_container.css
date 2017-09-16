@@ -8,12 +8,13 @@
     text-align: justify;
     background: color(var(--eggshell) alpha(25%));
     transition: all .3s easy-out;
+    
     @media (--viewport-large) {
         margin: 11% auto;
         width: 75%;
     }
     @media (--viewport-extralarge) {
-        margin: 8% auto;
+        margin: 50px auto;
         width: 60%;
     }
     .input {
@@ -100,4 +101,20 @@
             transform: scale(1.1);
         }
     }
+}
+
+.descS{
+    text-align: center;
+    color: #b28157;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    word-spacing: .2em;
+}
+
+.descR{
+    text-align: center;
+    color: #b28157;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    word-spacing: .2em;
 }

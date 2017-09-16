@@ -15,5 +15,18 @@ $('.searchIcon').on('click', function () {
     $('#wikiSearch').removeClass('hideEl');
     $('#searchBtn').removeClass('hideEl');
     $('#displayResults').removeClass('hideEl');
+ });
 
+ $('.searchIcon').on('mouseover', function () {
+    $('.descS').removeClass('hideEl');
+ });
+ $('.searchIcon').on('mouseout', function () {
+    $('.descS').addClass('hideEl');
+ });
+
+ $('.randomIcon').on('mouseover', function () {
+    $('.descR').removeClass('hideEl');
+ });
+ $('.randomIcon').on('mouseout', function () {
+    $('.descR').addClass('hideEl');
  });

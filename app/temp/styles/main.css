@@ -872,7 +872,7 @@ we can specify global variable to use flexbox as default instead of floats
 @media (min-width: 1200px) {
 
  .container {
-  margin: 8% auto;
+  margin: 50px auto;
   width: 60%;
  }
 }
@@ -1001,6 +1001,24 @@ we can specify global variable to use flexbox as default instead of floats
          transform: scale(1.1);
 }
 
+.descS{
+    text-align: center;
+    color: #b28157;
+    font-size: 24px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    word-spacing: .2em;
+}
+
+.descR{
+    text-align: center;
+    color: #b28157;
+    font-size: 22.4px;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    word-spacing: .2em;
+}
+
 .hideEl {
     display: none
 }
@@ -1013,6 +1031,54 @@ we can specify global variable to use flexbox as default instead of floats
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+}
+
+.header {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    width: 33%;
+    margin: 0 auto;
+    color: #b28157;
+    text-align: center;
+    font-size: 24px;
+    font-size: 1.5rem
+}
+
+.header ul {
+ width: 100%;
+ display: -webkit-box;
+ display: -ms-flexbox;
+ display: flex;
+ -webkit-box-pack: justify;
+     -ms-flex-pack: justify;
+         justify-content: space-between;
+ -webkit-box-align: center;
+     -ms-flex-align: center;
+         align-items: center;
+}
+
+.header li {
+ // padding: 0 30px;
+ display: -webkit-box;
+ display: -ms-flexbox;
+ display: flex;
+ -webkit-box-orient: horizontal;
+ -webkit-box-direction: normal;
+     -ms-flex-flow: row nowrap;
+         flex-flow: row nowrap;
+ list-style: none;
+ cursor: pointer;
+}
+
+.header a {
+ text-decoration: none;
+ color: #b28157;
 }
 
 /* ==========================================================================

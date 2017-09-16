@@ -1,0 +1,28 @@
+.header {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 33%;
+    margin: 0 auto;
+    color: #b28157;
+    text-align: center;
+    font-size: 1.5rem;
+
+    & ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    & li {
+        // padding: 0 30px;
+        display: flex;
+        flex-flow: row nowrap;
+        list-style: none;
+        cursor: pointer;
+    }
+    & a {
+        text-decoration: none;
+        color: #b28157;
+    }
+}

@@ -19,8 +19,15 @@
 </head>
 
 <body>
+    <div class="header">
+        <h1>Wikipedia Viewinator</h1>
+        <ul>
+            <li>Home</li>
+            <li>Search Wiki</li>
+            <li><a target="_blank" href="https://en.wikipedia.org/wiki/Special:Random">Go random</a></li>
+        </ul>
+    </div>
     <div class="container flex">
-
         <div class="searchIcon"><img src="/assets/images/search.png" alt="Get random Wikipedia article"></div>
         <div class="randomIcon"><a target="_blank" href="https://en.wikipedia.org/wiki/Special:Random"><img src="/assets/images/random.png" alt="Search Wikipedia"></a></div>
 
@@ -31,6 +38,8 @@
         </div>
         <div class="hideEl" id="displayResults"></div>
     </div>
+    <p class="descR hideEl">Go to a random article from Wikipedia</p>
+    <p class="descS hideEl">Search through Wikipedia</p>
 
     <!-- build:js assets/scripts/App.min.js -->
     <script type="text/javascript" src="./temp/scripts/App.js"></script>
