@@ -2,9 +2,7 @@
 
 ## Wikipedia Viewer
 
-
-
-
+https://puritanic.github.io/Wikipedia-viewer/
 
 
 Powered by jQuery and [Front End Starter Kit](https://github.com/Puritanic/Frontend-Starter-Kit)
