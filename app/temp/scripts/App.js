@@ -60,82 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-__webpack_require__(1);
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _jquery = __webpack_require__(2);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// https://www.mediawiki.org/wiki/API:Search_and_discovery
-
-(0, _jquery2.default)(document).ready(function () {
-    (0, _jquery2.default)('#searchBtn').on('click', function () {
-        if ((0, _jquery2.default)("input[name=wikipedia]").val() < 1) {
-            console.log('nope');
-        } else {
-            _jquery2.default.ajax({
-                url: '//en.wikipedia.org/w/api.php', // Wiki API endpoint
-                data: {
-                    action: 'opensearch', // https://www.mediawiki.org/wiki/API:Opensearch
-                    format: 'json', // return the data in the JSON format
-                    limit: 20, // limit the results
-                    search: (0, _jquery2.default)("input[name=wikipedia]").val()
-                },
-                dataType: 'jsonp', // JSONp return to "relax the same-origin-policy"
-                success: processResult // callback function to proceed on a success
-            });
-        }
-    });
-});
-
-function processResult(apiResult) {
-    var title = apiResult[1];
-    var description = apiResult[2];
-    var link = apiResult[3];
-    console.log(apiResult);
-
-    // clean previous results if any
-    (0, _jquery2.default)('#displayResults').html("");
-    // and reset input field
-    (0, _jquery2.default)("input[name=wikipedia]").val("");
-    // loop through results and append them to results div
-    for (var i = 0; i < apiResult[1].length; i++) {
-        (0, _jquery2.default)('#displayResults').append('<p class="title"><a target="_blank" href="' + link[i] + '">' + title[i] + '</a></p>');
-        if (description[i].length < 3) {
-            (0, _jquery2.default)('#displayResults').append('<p> There is no description for this result :( </p>');
-        }
-        (0, _jquery2.default)('#displayResults').append('<p>' + description[i] + '</p>');
-        (0, _jquery2.default)('#displayResults').append('<hr/>');
-    }
-}
-// run search with Enter key while focused on input field
-(0, _jquery2.default)("#wikiSearch").keydown(function (e) {
-    if (e.which === 13) {
-        (0, _jquery2.default)("#searchBtn").click();
-    }
-});
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2425,6 +2354,80 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)(module)))
 
 /***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(2);
+
+__webpack_require__(5);
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// https://www.mediawiki.org/wiki/API:Search_and_discovery
+
+(0, _jquery2.default)(document).ready(function () {
+    (0, _jquery2.default)('#searchBtn').on('click', function () {
+        if ((0, _jquery2.default)("input[name=wikipedia]").val() < 1) {
+            console.log('nope');
+        } else {
+            _jquery2.default.ajax({
+                url: '//en.wikipedia.org/w/api.php', // Wiki API endpoint
+                data: {
+                    action: 'opensearch', // https://www.mediawiki.org/wiki/API:Opensearch
+                    format: 'json', // return the data in the JSON format
+                    limit: 20, // limit the results
+                    search: (0, _jquery2.default)("input[name=wikipedia]").val()
+                },
+                dataType: 'jsonp', // JSONp return to "relax the same-origin-policy"
+                success: processResult // callback function to proceed on a success
+            });
+        }
+    });
+});
+
+function capitalize(searchTerm) {
+    return searchTerm.charAt(0).toUpperCase() + searchTerm.slice(1);
+}
+
+function processResult(apiResult) {
+    var searchTerm = apiResult[0];
+    var title = apiResult[1];
+    var description = apiResult[2];
+    var link = apiResult[3];
+    console.log(apiResult);
+
+    // clean previous results if any
+    (0, _jquery2.default)('#displayResults').html("");
+    (0, _jquery2.default)('.searchTitle').html("");
+    // and reset input field
+    (0, _jquery2.default)("input[name=wikipedia]").val("");
+    // loop through results and append them to results div
+    for (var i = 0; i < apiResult[1].length; i++) {
+        (0, _jquery2.default)('#displayResults').append('<p class="title"><a target="_blank" href="' + link[i] + '">' + title[i] + '</a></p>');
+        if (description[i].length < 3) {
+            (0, _jquery2.default)('#displayResults').append('<p> There is no description for this result :( </p>');
+        }
+        (0, _jquery2.default)('#displayResults').append('<p>' + description[i] + '</p>');
+        (0, _jquery2.default)('#displayResults').append('<hr/>');
+    }
+    (0, _jquery2.default)('.searchTitle').append(capitalize(searchTerm) + ' may refer to: ');
+}
+
+/***/ }),
 /* 3 */
 /***/ (function(module, exports) {
 
@@ -2460,6 +2463,36 @@ module.exports = function(module) {
 module.exports = __webpack_amd_options__;
 
 /* WEBPACK VAR INJECTION */}.call(exports, {}))
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// run search with Enter key while focused on input field
+(0, _jquery2.default)("#wikiSearch").keydown(function (e) {
+    if (e.which === 13) {
+        (0, _jquery2.default)("#searchBtn").click();
+    }
+});
+
+(0, _jquery2.default)('.searchIcon').on('click', function () {
+    (0, _jquery2.default)('.searchIcon').addClass('hideEl');
+    (0, _jquery2.default)('.randomIcon').addClass('hideEl');
+
+    (0, _jquery2.default)('.container').removeClass('flex');
+    (0, _jquery2.default)('#wikiSearch').removeClass('hideEl');
+    (0, _jquery2.default)('#searchBtn').removeClass('hideEl');
+    (0, _jquery2.default)('#displayResults').removeClass('hideEl');
+});
 
 /***/ })
 /******/ ]);

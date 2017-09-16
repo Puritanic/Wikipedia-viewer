@@ -22,7 +22,12 @@ $(document).ready(function () {
     });
 });
 
+function capitalize(searchTerm) {
+    return searchTerm.charAt(0).toUpperCase() + searchTerm.slice(1);
+}
+
 function processResult(apiResult) {
+    var searchTerm = apiResult[0];
     var title = apiResult[1];
     var description = apiResult[2];
     var link = apiResult[3];
@@ -30,6 +35,7 @@ function processResult(apiResult) {
 
     // clean previous results if any
     $('#displayResults').html("");
+    $('.searchTitle').html("");
     // and reset input field
     $("input[name=wikipedia]").val("")
     // loop through results and append them to results div
@@ -41,10 +47,6 @@ function processResult(apiResult) {
         $('#displayResults').append('<p>' + description[i] + '</p>');
         $('#displayResults').append('<hr/>');
     }
+    $('.searchTitle').append( capitalize(searchTerm) + ' may refer to: ');
 }
-// run search with Enter key while focused on input field
-$("#wikiSearch").keydown(function (e) {
-    if (e.which === 13) {
-        $("#searchBtn").click();
-    }
-});
+

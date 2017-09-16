@@ -19,12 +19,17 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container flex">
+
+        <div class="searchIcon"><img src="/assets/images/search.png" alt="Get random Wikipedia article"></div>
+        <div class="randomIcon"><a target="_blank" href="https://en.wikipedia.org/wiki/Special:Random"><img src="/assets/images/random.png" alt="Search Wikipedia"></a></div>
+
         <div class="input">
-            <input id="wikiSearch" type="text" name="wikipedia" placeholder="Search the Wikipedia" required>
-            <input id="searchBtn" type="button" value="Search">
+            <input class="hideEl" id="wikiSearch" type="text" name="wikipedia" placeholder="Search the Wikipedia" required>
+            <input class="hideEl" id="searchBtn" type="button" value="Search">
+            <p class="searchTitle"></p>
         </div>
-        <div id="displayResults"></div>
+        <div class="hideEl" id="displayResults"></div>
     </div>
 
     <!-- build:js assets/scripts/App.min.js -->
