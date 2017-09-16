@@ -960,12 +960,20 @@ we can specify global variable to use flexbox as default instead of floats
 
 .container .searchIcon img {
  cursor: pointer;
- width: 150px;
- height: 150px;
+ width: 125px;
+ height: 125px;
  -webkit-transition: -webkit-transform .2s ease-in;
  transition: -webkit-transform .2s ease-in;
  transition: transform .2s ease-in;
  transition: transform .2s ease-in, -webkit-transform .2s ease-in;
+}
+
+@media (min-width: 768px) {
+
+ .container .searchIcon img {
+  width: 175px;
+  height: 175px;
+ }
 }
 
 .container .searchIcon img:hover {
@@ -989,12 +997,20 @@ we can specify global variable to use flexbox as default instead of floats
 
 .container .randomIcon img {
  cursor: pointer;
- width: 150px;
- height: 150px;
+ width: 125px;
+ height: 125px;
  -webkit-transition: -webkit-transform .2s ease-in;
  transition: -webkit-transform .2s ease-in;
  transition: transform .2s ease-in;
  transition: transform .2s ease-in, -webkit-transform .2s ease-in;
+}
+
+@media (min-width: 768px) {
+
+ .container .randomIcon img {
+  width: 175px;
+  height: 175px;
+ }
 }
 
 .container .randomIcon img:hover {
@@ -1002,7 +1018,7 @@ we can specify global variable to use flexbox as default instead of floats
          transform: scale(1.1);
 }
 
-.descS{
+.descS {
     text-align: center;
     color: #b28157;
     font-size: 24px;
@@ -1011,7 +1027,7 @@ we can specify global variable to use flexbox as default instead of floats
     word-spacing: .2em;
 }
 
-.descR{
+.descR {
     text-align: center;
     color: #b28157;
     font-size: 22.4px;
@@ -1020,11 +1036,21 @@ we can specify global variable to use flexbox as default instead of floats
     word-spacing: .2em;
 }
 
-.legal{
+.legal {
     position: absolute;
-    bottom: 5px;
-    right: 5px;
+    bottom: 2px;
+    right: 2px;
+    font-size: 10px;
     text-align: center;
+}
+
+@media (min-width: 768px) {
+
+ .legal {
+  bottom: 5px;
+  left: 5px;
+  font-size: 14px;
+ }
 }
 
 .hideEl {
@@ -1050,29 +1076,44 @@ we can specify global variable to use flexbox as default instead of floats
     -webkit-box-direction: normal;
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
-    width: 33%;
     margin: 0 auto;
     color: #b28157;
     text-align: center;
-    font-size: 24px;
-    font-size: 1.5rem
+    font-size: 16px;
+    font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+
+ .header {
+  font-size: 1.5rem;
+  width: 50%;
+ }
 }
 
 .header ul {
- width: 100%;
+ width: 90%;
  display: -webkit-box;
  display: -ms-flexbox;
  display: flex;
- -webkit-box-pack: justify;
-     -ms-flex-pack: justify;
-         justify-content: space-between;
+ -ms-flex-pack: distribute;
+     justify-content: space-around;
  -webkit-box-align: center;
      -ms-flex-align: center;
          align-items: center;
 }
 
+@media (min-width: 768px) {
+
+ .header ul {
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+ }
+}
+
 .header li {
- // padding: 0 30px;
  display: -webkit-box;
  display: -ms-flexbox;
  display: flex;

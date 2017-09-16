@@ -2,24 +2,34 @@
     position: relative;
     display: flex;
     flex-flow: column nowrap;
-    width: 33%;
     margin: 0 auto;
     color: #b28157;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
+
+    @media(--viewport-medium){
+        font-size: 1.5rem;
+        width: 50%;
+    }
 
     & ul {
-        width: 100%;
+        width: 90%;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
+
+        @media(--viewport-medium){
+            width: 100%;
+            justify-content: space-between;
+        }
     }
     & li {
-        // padding: 0 30px;
         display: flex;
         flex-flow: row nowrap;
         list-style: none;
         cursor: pointer;
+
+
     }
     & a {
         text-decoration: none;

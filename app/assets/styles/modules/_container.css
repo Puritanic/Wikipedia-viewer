@@ -8,7 +8,6 @@
     text-align: justify;
     background: color(var(--eggshell) alpha(25%));
     transition: all .3s easy-out;
-    
     @media (--viewport-large) {
         margin: 11% auto;
         width: 75%;
@@ -76,9 +75,13 @@
         margin-right: 5%;
         & img {
             cursor: pointer;
-            width: 150px;
-            height: 150px;
-            transition: transform .2s ease-in;            
+            width: 125px;
+            height: 125px;
+            transition: transform .2s ease-in;
+            @media(--viewport-medium) {
+                width: 175px;
+                height: 175px;
+            }
         }
         & img:hover {
             transform: scale(1.1);
@@ -90,12 +93,15 @@
         justify-content: center;
         margin: auto;
         margin-left: 5%;
-        
         & img {
             cursor: pointer;
-            width: 150px;
-            height: 150px;
+            width: 125px;
+            height: 125px;
             transition: transform .2s ease-in;
+            @media(--viewport-medium) {
+                width: 175px;
+                height: 175px;
+            }
         }
         & img:hover {
             transform: scale(1.1);
@@ -103,7 +109,7 @@
     }
 }
 
-.descS{
+.descS {
     text-align: center;
     color: #b28157;
     font-size: 1.5rem;
@@ -111,7 +117,7 @@
     word-spacing: .2em;
 }
 
-.descR{
+.descR {
     text-align: center;
     color: #b28157;
     font-size: 1.4rem;
@@ -119,9 +125,16 @@
     word-spacing: .2em;
 }
 
-.legal{
+.legal {
     position: absolute;
-    bottom: 5px;
-    right: 5px;
-    text-align: center;
+    bottom: 2px;
+    right: 2px;
+    font-size: 10px;
+    text-align: center; 
+    
+    @media(--viewport-medium) {
+        bottom: 5px;
+        left: 5px;
+        font-size: 14px;
+    }
 }
