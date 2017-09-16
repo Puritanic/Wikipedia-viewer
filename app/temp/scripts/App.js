@@ -2477,14 +2477,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// run search with Enter key while focused on input field
-(0, _jquery2.default)("#wikiSearch").keydown(function (e) {
-   if (e.which === 13) {
-      (0, _jquery2.default)("#searchBtn").click();
-   }
-});
-
-(0, _jquery2.default)('.searchIcon').on('click', function () {
+function searchWiki() {
    (0, _jquery2.default)('.searchIcon').addClass('hideEl');
    (0, _jquery2.default)('.randomIcon').addClass('hideEl');
 
@@ -2492,8 +2485,33 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
    (0, _jquery2.default)('#wikiSearch').removeClass('hideEl');
    (0, _jquery2.default)('#searchBtn').removeClass('hideEl');
    (0, _jquery2.default)('#displayResults').removeClass('hideEl');
-});
+}
 
+function home() {
+   (0, _jquery2.default)('.container').addClass('flex');
+   (0, _jquery2.default)('#wikiSearch').addClass('hideEl');
+   (0, _jquery2.default)('#searchBtn').addClass('hideEl');
+   (0, _jquery2.default)('#displayResults').addClass('hideEl');
+   (0, _jquery2.default)('.searchTitle').addClass('hideEl');
+
+   (0, _jquery2.default)('.searchIcon').removeClass('hideEl');
+   (0, _jquery2.default)('.randomIcon').removeClass('hideEl');
+}
+
+// run search with Enter key while focused on input field
+(0, _jquery2.default)("#wikiSearch").keydown(function (e) {
+   if (e.which === 13) {
+      (0, _jquery2.default)("#searchBtn").click();
+   }
+});
+// remove buttons on searchIcon and search wiki click
+(0, _jquery2.default)('.searchIcon').on('click', searchWiki);
+(0, _jquery2.default)('.navSearch').on('click', searchWiki);
+
+// show home buttons 
+(0, _jquery2.default)('.navHome').on('click', home);
+
+// Show button descriptions on mouseover
 (0, _jquery2.default)('.searchIcon').on('mouseover', function () {
    (0, _jquery2.default)('.descS').removeClass('hideEl');
 });

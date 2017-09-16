@@ -118,3 +118,10 @@
     text-transform: uppercase;
     word-spacing: .2em;
 }
+
+.legal{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    text-align: center;
+}
